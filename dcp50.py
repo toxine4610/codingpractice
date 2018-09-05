@@ -31,4 +31,8 @@ def isOperator(C):
 	else:
 		return False
 
-def
+def inorder(t):
+    if t is not none:
+        inorder(t.right)
+        print t.value
+        inorder(t.right)
