@@ -10,7 +10,6 @@ For example, pow(2, 10) should return 1024.
 '''
 
 # solve recursively, O(logN)
-
 def pow(x,y):
 	if y == 0: 
 		return 1
@@ -22,8 +21,6 @@ def pow(x,y):
 			return x*temp*temp
 		else:
 			return (temp*temp)/x
-
-
-base = 3
+base = 2
 for i in range(0, 11):
 	print("{0}^{1} = {2}".format(base, i, pow(base, i)))
