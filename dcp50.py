@@ -36,3 +36,40 @@ def inorder(t):
         inorder(t.right)
         print t.value
         inorder(t.right)
+
+def constructTree(postfix):
+	stack = []
+	for char in postfix:
+		if not isOperator(char):
+			t = ExpressionTree(char)
+			stack.append(t)
+		else:
+			t = ExpressionTree(char)
+			t1 = stack.pop()
+			t2 = stack.pop()
+
+			t.right = t1
+			t.left  = t2
+			stack.append(t)
+	t = stack.pop()
+	return t
+
+def operators(val):
+	# create dictionary
+	d = {'plus' : lambda x,y: x+y, 'times' : lambda	x,y: x*y, 
+		'minus' : lambda x,y: x-y , 'divide': lambda x,y: x/y}
+	return d[val]
+
+def evaluate(root):
+	if root.val == 'plus'
+		f = operators('plus')
+		return f( evaluate(root.left) ,  evaluate(root.right))
+	elif root.val == 'minus':
+		f = operators('minus')
+		return f( evaluate(root.left) ,  evaluate(root.right))
+	elif root.val == 'times':
+		f = operators('times')
+		return f( evaluate(root.left) ,  evaluate(root.right))
+	elif root.val == 'divide':
+		f = operators('divide')
+		return f( evaluate(root.left) ,  evaluate(root.right))

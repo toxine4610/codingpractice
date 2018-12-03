@@ -12,7 +12,7 @@ pl.figure(1, figsize = (3,2.5))
 pl.clf()
 pl.axes([0,0,1,1])
 
-fn = lambda x, y: (x-3)**2 + (y-2)**2 # equation of a circle.
+fn = lambda x, y: (x-3)**2 + (y-2)**2 # equation of 
 
 cont = pl.contour( np.sqrt(fn(x,y)), 
 				   extent = [-2.03, 4.2, -1.6, 3.2],
